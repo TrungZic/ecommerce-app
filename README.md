@@ -1,70 +1,51 @@
-# Getting Started with Create React App
+### tóm tắt Project: Ứng Dụng E-Commerce Bán Hàng
+Đây là một ứng dụng React cho thương mại điện tử - cửa hàng bán các sản phẩm công nghệ trực tuyến. Dưới đây là tóm tắt toàn bộ nội dung:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### 🎯 Chức Năng Chính
+Quản lý Sản Phẩm (15 sản phẩm)
 
-## Available Scripts
+### 5 danh mục: Laptop, Điện thoại, Tai nghe, Chuột & Bàn phím, Phụ kiện
+Các sản phẩm bao gồm: Dell XPS, iPhone 15, Samsung S24, Sony WH, Logitech MX, v.v.
+Tính năng tìm kiếm theo tên/mô tả
+Lọc sản phẩm theo danh mục
+Xác Thực Người Dùng (AuthContext)
 
-In the project directory, you can run:
+Đăng ký tài khoản (username, email, password)
+Đăng nhập với kiểm tra username/password
+Đăng xuất
+Lưu trữ danh sách người dùng đã đăng ký
+Giỏ Hàng (CartContext)
 
-### `npm start`
+Thêm sản phẩm vào giỏ
+Xóa sản phẩm khỏi giỏ
+Cập nhật số lượng
+Hiển thị tổng số lượng item trong giỏ
+Quản lý Đơn Hàng (OrderContext)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Tạo đơn hàng từ giỏ hàng
+Cập nhật thông tin giao hàng (địa chỉ, số điện thoại, ghi chú)
+Theo dõi trạng thái đơn hàng (Chờ xác nhận, Đang giao, v.v.)
+Xóa đơn hàng
+Lấy lịch sử đơn hàng theo người dùng
+Quản Trị Viên (AdminContext)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Đăng nhập admin riêng biệt
+Dashboard quản lý (chưa được phát triển đầy đủ)
+### 📄 Các Trang Chính
+Trang Chủ - Hiển thị sản phẩm, tìm kiếm, lọc theo danh mục
+Giỏ Hàng - Xem, chỉnh sửa giỏ hàng và thanh toán
+Đăng Nhập/Đăng Ký - Xác thực người dùng
+Tài Khoản - Quản lý thông tin cá nhân và lịch sử đơn hàng
+Giới Thiệu & Liên Hệ - Thông tin về cửa hàng
+Admin Dashboard - Quản lý hệ thống
+### 🛠️ Công Nghệ Sử Dụng
+React 19.2.3 - Framework chính
+React Router 7.11.0 - Định tuyến
+Context API - Quản lý trạng thái toàn cục
+CSS - Styling
+### 💾 Cấu Trúc Dữ Liệu
+Dữ liệu sản phẩm được lưu trữ tĩnh trong Home component
+Người dùng, giỏ hàng, đơn hàng được quản lý bằng Context API (lưu trong state, không có database)
+Lưu ý: Đây là một ứng dụng frontend đơn giản, chưa có backend/database thực sự, nên dữ liệu sẽ bị mất khi reload trang.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### link: http://localhost:3000/
