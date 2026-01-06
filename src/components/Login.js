@@ -68,6 +68,10 @@ function Login() {
           <button type="submit" className="submit-btn">Đăng Nhập</button>
         </form>
         
+          <div className="forgot-password-link">
+            <Link to="/forgot-password">Quên mật khẩu?</Link>
+          </div>
+        
         <div className="auth-footer">
           <p>Chưa có tài khoản? <Link to="/register">Đăng ký ngay</Link></p>
         </div>

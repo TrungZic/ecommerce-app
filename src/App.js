@@ -14,6 +14,7 @@ import Cart from './components/Cart';
 import Account from './components/Account';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
+import ForgotPassword from './components/ForgotPassword';
 import LiveChat from './components/LiveChat';
 import './App.css';
 
@@ -29,6 +30,9 @@ function App() {
               <Routes>
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                  <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/AdminLogin" element={<AdminLogin />} />
+                <Route path="/AdminDashboard" element={<AdminDashboard />} />
                 <Route path="/" element={<Home />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />

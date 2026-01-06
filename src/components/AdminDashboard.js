@@ -2,14 +2,20 @@ import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AdminContext } from '../context/AdminContext';
 import { OrderContext } from '../context/OrderContext';
-import { AuthContext } from '../context/AuthContext';
 
 function AdminDashboard() {
-  const { adminLoggedIn, adminUser, adminLogout } = useContext(AdminContext);
+  const { adminLoggedIn, adminUser, adminLogout, registeredUsers, refreshUsers } = useContext(AdminContext);
   const { orders, updateOrderStatus } = useContext(OrderContext);
-  const { registeredUsers } = useContext(AuthContext);
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState('overview');
+
+  // Refresh registered users khi switch sang tab users
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+    if (tab === 'users') {
+      refreshUsers();
+    }
+  };
 
   if (!adminLoggedIn) {
     return navigate('/AdminLogin');
@@ -49,19 +55,25 @@ function AdminDashboard() {
       <div className="admin-nav">
         <button 
           className={`admin-nav-btn ${activeTab === 'overview' ? 'active' : ''}`}
-          onClick={() => setActiveTab('overview')}
+          onClick={() => handleTabChange('overview')}
         >
           📈 Tổng Quan
         </button>
         <button 
-          className={`admin-nav-btn ${activeTab === 'orders' ? 'active' : ''}`}
-          onClick={() => setActiveTab('orders')}
+          className={`admin-nav-btn ${activeTab === 'products' ? 'active' : ''}`}
+          onClick={() => handleTabChange('products')}
         >
-          📦 Quản Lý Đơn Hàng
+          📦 Quản Lý Sản Phẩm
+        </button>
+        <button 
+          className={`admin-nav-btn ${activeTab === 'orders' ? 'active' : ''}`}
+          onClick={() => handleTabChange('orders')}
+        >
+          🎁 Quản Lý Đơn Hàng
         </button>
         <button 
           className={`admin-nav-btn ${activeTab === 'users' ? 'active' : ''}`}
-          onClick={() => setActiveTab('users')}
+          onClick={() => handleTabChange('users')}
         >
           👥 Quản Lý Người Dùng
         </button>
@@ -144,6 +156,17 @@ function AdminDashboard() {
                 </div>
               </div>
             </div>
+          </div>
+        )}
+
+        {/* Products Tab */}
+        {activeTab === 'products' && (
+          <div className="products-management">
+            <div className="products-header">
+              <h2>Quản Lý Sản Phẩm</h2>
+              <p className="products-count">Tổng cộng: <strong>{0}</strong> sản phẩm</p>
+            </div>
+            <p className="no-data">📌 Chức năng quản lý sản phẩm sẽ được cập nhật sớm</p>
           </div>
         )}
 
