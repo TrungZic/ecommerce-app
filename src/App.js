@@ -14,6 +14,7 @@ import Cart from './components/Cart';
 import Account from './components/Account';
 import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
+import LiveChat from './components/LiveChat';
 import './App.css';
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
                 <Route path="/account" element={<Account />} />
               </Routes>
 
+              <LiveChat />
             </OrderProvider>
           </CartProvider>
         </AdminProvider>
