@@ -1,24 +1,33 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function SearchBar({ onSearch }) {
   const [searchTerm, setSearchTerm] = useState('');
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-    onSearch(searchTerm);
-  };
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      onSearch(searchTerm);
+    }, 200);
+
+    return () => clearTimeout(timeout);
+  }, [searchTerm, onSearch]);
 
   return (
     <div className="search-bar">
-      <form onSubmit={handleSearch}>
-        <input
-          type="text"
-          placeholder="Tìm kiếm sản phẩm..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-        />
-        <button type="submit">Tìm Kiếm</button>
-      </form>
+      <input
+        type="text"
+        placeholder="Tìm kiếm sản phẩm..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      {searchTerm && (
+        <button
+          className="clear-search"
+          onClick={() => setSearchTerm('')}
+          aria-label="Xóa tìm kiếm"
+        >
+          ✕
+        </button>
+      )}
     </div>
   );
 }

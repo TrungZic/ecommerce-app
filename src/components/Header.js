@@ -14,7 +14,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-top">
-        <h1>🛍️ Cửa Hàng Di Động</h1>
+        <h1>🛍️ Cửa Hàng Điện Tử</h1>
         <div className="user-info">
           {isLoggedIn ? (
             <>
