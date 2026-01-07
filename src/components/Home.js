@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchBar from './SearchBar';
 import ProductList from './ProductList';
-import './Home.css';
+import '../css/Home.css';
 
 function Home() {
   const allProducts = [

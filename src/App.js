@@ -16,7 +16,7 @@ import AdminLogin from './components/AdminLogin';
 import AdminDashboard from './components/AdminDashboard';
 import ForgotPassword from './components/ForgotPassword';
 import LiveChat from './components/LiveChat';
-import './App.css';
+import './css/App.css';
 
 function App() {
   return (

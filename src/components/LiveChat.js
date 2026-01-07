@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './LiveChat.css';
+import '../css/LiveChat.css';
 
 function LiveChat() {
   const [isOpen, setIsOpen] = useState(false);

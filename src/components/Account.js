@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../context/AuthContext';
 import { OrderContext } from '../context/OrderContext';
-import '../Account.css';
+import '../css/Account.css';
 
 function Account() {
   const { user, logout } = useContext(AuthContext);
